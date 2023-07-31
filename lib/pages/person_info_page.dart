@@ -119,24 +119,6 @@ class _PersonInfoPageState extends State<PersonInfoPage> {
                           cityId: person.cityId ?? 0)),
                     ),
                     const SizedBox(height: 32),
-                    // Padding(
-                    //   padding: const EdgeInsets.all(16),
-                    //   child: Column(
-                    //     crossAxisAlignment: CrossAxisAlignment.start,
-                    //     children: [
-                    //       Text('Nome: ${person.name}'),
-                    //       Text('CPF: ${person.cpf}'),
-                    //       Text('Nome da Mãe: ${person.nomeMae}'),
-                    //       Text('Nome do Pai: ${person.nomePai}'),
-                    //       Text('Estado: ${person.selectedState?.nome ?? ''}'),
-                    //       Text('Estado ID: ${person.selectedState?.id ?? ''}'),
-                    //       Text('Cidade: ${person.selectedCity?.nome ?? ''}'),
-                    //       Text('Cidade ID: ${person.selectedCity?.id ?? ''}'),
-                    //       // Text('Foto base64: ${person.photo}'),
-                    //       Text('Endereço: ${person.address}'),
-                    //     ],
-                    //   ),
-                    // ),
                     ElevatedButton(
                       onPressed: () {
                         // Verifica se o formulário é válido
