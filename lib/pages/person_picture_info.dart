@@ -40,7 +40,6 @@ class _PersonPictureInfoState extends State<PersonPictureInfo> {
     final pickedImage = await picker.pickImage(source: source);
 
     if (pickedImage != null) {
-      print('Image path: ${pickedImage.path}');
       setState(() {
         _image = File(pickedImage.path);
         _imageAsBase64 =
@@ -69,8 +68,6 @@ class _PersonPictureInfoState extends State<PersonPictureInfo> {
         photoBase64: _imageAsBase64,
         photoPath: path,
       ));
-
-      print(encode.substring(0, 10));
     });
   }
 

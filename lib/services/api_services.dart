@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:poc_supero_btt/models/person.dart';
 import 'package:poc_supero_btt/config/auth_manager.dart';
+import 'package:poc_supero_btt/models/person.dart';
 
 import '../database/database.dart';
 
@@ -16,12 +16,10 @@ class ApiService {
         // Add the token to the request header
         final token = _authManager.authToken;
 
-        print(token);
         if (token != null) {
           options.headers['Authorization'] = 'Bearer $token';
         }
-        // Log the request headers for debugging purposes
-        print('Request headers: ${options.headers}');
+
         return handler.next(options);
       },
     ));
