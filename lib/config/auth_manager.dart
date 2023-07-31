@@ -4,7 +4,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 class AuthManager {
   static const String _tokenKey = 'auth_token';
 
-  // SharedPreferences? _prefs;
   SharedPreferences _prefs = GetIt.instance<SharedPreferences>();
 
   Future<void> initSharedPreferences() async {

@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-import 'package:get_it/get_it.dart';
 import 'package:dio/dio.dart';
+import 'package:get_it/get_it.dart';
 import 'package:poc_supero_btt/config/auth_manager.dart';
 
 class AuthService {
   final AuthManager _authManager = GetIt.instance<AuthManager>();
-  final Dio _dio = Dio(); // Create an instance of Dio
+  final Dio _dio = Dio();
 
   Future<void> authenticateUser() async {
     try {

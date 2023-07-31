@@ -10,7 +10,6 @@ import 'auth_service.dart';
 final GetIt serviceLocator = GetIt.instance;
 
 void setupServiceLocator() {
-  // Registrando as dependências aqui
   serviceLocator.registerLazySingleton<PersonBloc>(() => PersonBloc());
   serviceLocator.registerLazySingleton<ApiService>(() => ApiService());
   serviceLocator.registerLazySingleton<AuthManager>(() => AuthManager());

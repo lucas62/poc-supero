@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:equatable/equatable.dart';
 import 'package:poc_supero_btt/models/city.dart';
 import 'package:poc_supero_btt/models/state.dart';
@@ -51,7 +49,6 @@ class Person extends Equatable {
     this.address = '',
   });
 
-  // Named constructor to create a Person instance from JSON data.
   factory Person.fromJson(Map<String, dynamic> json) {
     return Person(
       name: json['name'] as String,
@@ -68,7 +65,6 @@ class Person extends Equatable {
     );
   }
 
-  // Método para converter a instância de Person em um Map (JSON).
   Map<String, dynamic> toJson() {
     return {
       'name': name,
@@ -87,20 +83,20 @@ class Person extends Equatable {
 
   @override
   List<Object?> get props => [
-    name,
-    cpf,
-    nomeMae,
-    selectedState,
-    stateAddress,
-    stateId,
-    selectedCity,
-    city,
-    cityId,
-    photoBase64,
-    photoPath,
-    nomePai,
-    address,
-  ];
+        name,
+        cpf,
+        nomeMae,
+        selectedState,
+        stateAddress,
+        stateId,
+        selectedCity,
+        city,
+        cityId,
+        photoBase64,
+        photoPath,
+        nomePai,
+        address,
+      ];
 
   Person copyWith({
     String? name,

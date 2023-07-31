@@ -40,12 +40,8 @@ class ApiService {
         'nomePai': person.nomePai,
         'address': person.address,
       });
-
-      // Handle the response if needed
     } catch (error) {
       print('Error during form submission: $error');
-
-      // If there's an error during form submission, save the person data to the local database.
       final DbManager dbManager = GetIt.instance<DbManager>();
       await dbManager.insertModel(person);
     }

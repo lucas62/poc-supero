@@ -42,8 +42,7 @@ class _PersonPictureInfoState extends State<PersonPictureInfo> {
     if (pickedImage != null) {
       setState(() {
         _image = File(pickedImage.path);
-        _imageAsBase64 =
-            null; // Reset base64 representation when a new image is taken
+        _imageAsBase64 = null;
       });
 
       await _getImageAsBase64(File(pickedImage.path), pickedImage.path);
@@ -76,17 +75,14 @@ class _PersonPictureInfoState extends State<PersonPictureInfo> {
       setState(() {
         _isLoading = true;
       });
-      // Form is valid, create the Person object from the form data
+
       final personState = bloc.state as PersonDefaultState;
       final person = personState.person;
 
-      // Call the API to submit the form
       _apiService.postPersonForm(person).then((_) {
         setState(() {
           _isLoading = false;
         });
-        // Form submitted successfully, you can show a success message or navigate to another screen
-        // For example:
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
@@ -95,14 +91,12 @@ class _PersonPictureInfoState extends State<PersonPictureInfo> {
             actions: [
               TextButton(
                 onPressed: () {
-                  // Reset navigation to PersonInfoPage
                   Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
                       builder: (context) => const PersonInfoPage(),
                     ),
-                    (route) =>
-                        false, // Pop all routes until the new route is added
+                    (route) => false,
                   );
                 },
                 child: const Text('OK'),
@@ -114,20 +108,6 @@ class _PersonPictureInfoState extends State<PersonPictureInfo> {
         setState(() {
           _isLoading = false;
         });
-        // Handle the error when form submission fails
-        showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            title: const Text('Erro'),
-            content: const Text('Um erro ocorreu ao enviar o fomulário.'),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.of(context).pop(),
-                child: const Text('OK'),
-              ),
-            ],
-          ),
-        );
       });
     }
   }
@@ -293,10 +273,9 @@ class _PersonPictureInfoState extends State<PersonPictureInfo> {
             ),
             if (_isLoading)
               Container(
-                color: Colors
-                    .black54, // A semi-transparent black color as an overlay
+                color: Colors.black54,
                 child: const Center(
-                  child: CircularProgressIndicator(), // Loading indicator
+                  child: CircularProgressIndicator(),
                 ),
               ),
           ],
